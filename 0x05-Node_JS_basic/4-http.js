@@ -1,13 +1,16 @@
+// simple node http server
 const http = require('http');
 
-// Create the HTTP server
+// Create the server
 const app = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
   res.end('Hello ALX!');
 });
 
-// Listen on port 1245
+// Server listens on port 1245
 app.listen(1245);
 
+// Export the server for testing
 module.exports = app;
 
